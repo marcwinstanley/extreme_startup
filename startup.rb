@@ -15,8 +15,8 @@ class Question
   end
 	
 	def output_questions_to_file(question)
-		File.open("log.txt", "w+") do |file|
-			output = File.open( "log.txt", "w" )
+		File.open("views/log.txt", "w+") do |file|
+			output = File.open( "views/log.txt", "w" )
 			output << question + "\n"
 			output.close      
 		end
@@ -66,5 +66,5 @@ get '/*' do
 end
 		
 get '/questions' do
-	
+	send_file 'views/log.txt'
 end

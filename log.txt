@@ -1,1 +1,1 @@
- which of the following numbers are primes
+ which of the following numbers is both a square and a cube
