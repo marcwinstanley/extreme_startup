@@ -22,5 +22,13 @@ describe Question do
       end
 
     end
+
+    context 'which is the largest figure' do
+      let(:question) {'q=00515f60: which of the following numbers is the largest: 38, 8, 581, 357'}
+
+      it 'returns 581' do
+        expect(subject).to eq 581
+      end
+    end
   end 
 end
