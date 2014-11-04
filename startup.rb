@@ -10,7 +10,16 @@ class Question
     puts '\n\n ----------'
     puts @param_string.split(':')[1]
     puts '---------- \n\n'
+		output_questions_to_file(@param_string.split(':')[1])
   end
+	
+	def output_questions_to_file(question)
+		File.open("log.txt", "w+") do |file|
+			output = File.open( "log.txt", "w" )
+			output << question + "\n"
+			output.close      
+		end
+	end
 
   def answer
     id, *question = @param_string.split(":")
@@ -48,4 +57,8 @@ end
 
 get '/*' do
   Question.new(params['q']).answer
+end
+		
+get '/questions' do
+	
 end
