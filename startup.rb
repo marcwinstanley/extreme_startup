@@ -10,7 +10,7 @@ class Question
   end
 
   def answer
-
+    25
   end
 
 end
