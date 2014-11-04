@@ -54,7 +54,7 @@ class Question
   end
   
   def identify_prime_numbers(question)
-    question.last.split(',').map(&:to_i).keep_if { |i| Prime.instance.prime?(i) }
+    question.last.split(',').map(&:to_i).keep_if { |i| Prime.instance.prime?(i) }.join(',')
   end
 
 end

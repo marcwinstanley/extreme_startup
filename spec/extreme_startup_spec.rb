@@ -51,7 +51,7 @@ describe Question do
       let(:question) {'b655adb0: which of the following numbers are primes: 11, 742 '}
 
       it 'returns the primes' do
-        expect(subject).to eq [11]
+        expect(subject).to eq "11"
       end
     end
   end 
