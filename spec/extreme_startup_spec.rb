@@ -30,5 +30,13 @@ describe Question do
         expect(subject).to eq 581
       end
     end
+
+    context 'what color is a banana' do
+      let(:question) {'q=00515f60: what colour is a banana'}
+
+      it 'returns the answer' do
+        expect(subject).to eq 'Yellow'
+      end
+    end
   end 
 end

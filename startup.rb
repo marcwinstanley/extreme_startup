@@ -21,7 +21,7 @@ class Question
     case question.first
     when /what is (\d+) plus (\d+)/ then x_plus_y(question)
     when /which of the following numbers is the largest/ then return_largest_value(question)
-    #when /what colour is a banana/ then return_yellow
+    when /what colour is a banana/ then return_yellow
     end
   end
 
@@ -35,7 +35,7 @@ class Question
   end
 
   def return_yellow
-    "yellow"
+    "Yellow"
   end
 
 end
