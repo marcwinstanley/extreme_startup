@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'prime'
 
 set :bind, '0.0.0.0'
 
@@ -32,6 +33,7 @@ class Question
     when /which of the following numbers is the largest/ then return_largest_value(question)
     when /what colour is a banana/ then return_yellow
     when /who is the Prime Minister of Great Britain/ then return_pm
+    when /which of the following numbers are prime/ then identify_prime_numbers(question)
     end
   end
 
@@ -50,6 +52,10 @@ class Question
 
   def return_pm
     "David Cameron"
+  end
+  
+  def identify_prime_numbers(question)
+    question.last.split(',').map(&:to_i).keep_if { |i| Prime.instance.prime?(i) }
   end
 
 end
