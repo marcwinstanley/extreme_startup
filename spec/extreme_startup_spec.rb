@@ -46,5 +46,13 @@ describe Question do
         expect(subject).to eq 'David Cameron'
       end
     end
+    
+    context 'which of the following numbers are primes' do
+      let(:question) {'b655adb0: which of the following numbers are primes: 11, 742 '}
+
+      it 'returns the primes' do
+        expect(subject).to eq [11]
+      end
+    end
   end 
 end
