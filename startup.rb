@@ -7,7 +7,9 @@ class Question
 
   def initialize(param_string)
     @param_string = param_string
+    puts '\n\n ----------'
     puts @param_string.split(':')[1]
+    puts '---------- \n\n'
   end
 
   def answer
