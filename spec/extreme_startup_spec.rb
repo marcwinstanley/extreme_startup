@@ -38,5 +38,13 @@ describe Question do
         expect(subject).to eq 'Yellow'
       end
     end
+
+    context 'Who is the prime minister' do
+      let(:question) {'q=00515f60: who is the Prime Minister of Great Britain'}
+
+      it 'returns the answer' do
+        expect(subject).to eq 'David Cameron'
+      end
+    end
   end 
 end

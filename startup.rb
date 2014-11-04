@@ -22,6 +22,7 @@ class Question
     when /what is (\d+) plus (\d+)/ then x_plus_y(question)
     when /which of the following numbers is the largest/ then return_largest_value(question)
     when /what colour is a banana/ then return_yellow
+    when /who is the Prime Minister of Great Britain/ then return_pm
     end
   end
 
@@ -36,6 +37,10 @@ class Question
 
   def return_yellow
     "Yellow"
+  end
+
+  def return_pm
+    "David Cameron"
   end
 
 end
