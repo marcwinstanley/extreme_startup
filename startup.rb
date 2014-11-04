@@ -27,7 +27,8 @@ class Question
 
   def question_type(question)
     case question.first
-    when /what is (\d+) plus (\d+)/ then x_maths_y(question)
+    when /what is (\d+) plus (\d+)/ then x_plus_y(question)
+    when /what is (\d+) minus (\d+)/ then x_minus_y(question)
     when /which of the following numbers is the largest/ then return_largest_value(question)
     when /what colour is a banana/ then return_yellow
     when /who is the Prime Minister of Great Britain/ then return_pm
@@ -45,13 +46,6 @@ class Question
 	def x_minus_y(question)
 		answers = question.first.match(/what is (\d+) minus (\d+)/).captures
     answer = answers[0].to_i - answers[1].to_i
-	end
-			
-	def x_maths_y(question)
-		case question.first
-			when /plus/ then x_plus_y(question)
-			when /minus/ then x_plus_y(question)
-		end
 	end
 
   def return_largest_value(question)
