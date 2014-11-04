@@ -7,6 +7,7 @@ class Question
 
   def initialize(param_string)
     @param_string = param_string
+    puts @param_string.split(':')[1]
   end
 
   def answer
@@ -18,6 +19,7 @@ class Question
     case question.first
     when /what is (\d+) plus (\d+)/ then x_plus_y(question)
     when /which of the following numbers is the largest/ then return_largest_value(question)
+    when /what colour is a banana/ then return_yellow
     end
   end
 
@@ -28,6 +30,10 @@ class Question
 
   def return_largest_value(question)
     question[1].split(',').map(&:to_i).max
+  end
+
+  def return_yellow
+    "yellow"
   end
 
 end
