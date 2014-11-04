@@ -11,12 +11,13 @@ class Question
     puts '\n\n ----------'
     puts @param_string.split(':')[1]
     puts '---------- \n\n'
-		output_questions_to_file(@param_string.split(':')[1])
+		output_questions_to_file(@param_string.split(':')[1], @param_string)
   end
 	
-	def output_questions_to_file(question)
+	def output_questions_to_file(question, string)
 		open('views/log.txt', 'a') { |f|
 			f.puts question + "\n"
+			f.puts string + "\n\n"
 		}
 	end
 
