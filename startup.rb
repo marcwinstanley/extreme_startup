@@ -33,8 +33,9 @@ class Question
     when /what colour is a banana/ then return_yellow
     when /who is the Prime Minister of Great Britain/ then return_pm
     when /which of the following numbers are prime/ then identify_prime_numbers(question)
+    when /which of the following numbers is both a square and a cube/ then identify_square_cube(question)
     else
-	output_questions_to_file(@param_string.split(':')[1], @param_string)
+  	 output_questions_to_file(@param_string.split(':')[1], @param_string)
     end
   end
 
@@ -62,6 +63,10 @@ class Question
   
   def identify_prime_numbers(question)
     question.last.split(',').map(&:to_i).keep_if { |i| Prime.instance.prime?(i) }.join(',')
+  end
+
+  def identify_square_cube(question)
+    question.last.split(',').map(&:to_i).keep_if {|i| Math.cbrt(i)%1 == 0 &&  Math.sqrt(i)%1 == 0 }.join(',')
   end
 
 end

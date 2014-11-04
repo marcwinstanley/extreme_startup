@@ -54,5 +54,14 @@ describe Question do
         expect(subject).to eq "11"
       end
     end
+
+
+    context 'which of the following numbers is both a square and a cube' do
+      let(:question) {'q=00515f60: which of the following numbers is both a square and a cube: 289, 511, 1, 614'}
+
+      it 'returns the answer' do
+        expect(subject).to eq '1'
+      end
+    end
   end 
 end
