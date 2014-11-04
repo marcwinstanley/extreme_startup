@@ -11,7 +11,6 @@ class Question
     puts '\n\n ----------'
     puts @param_string.split(':')[1]
     puts '---------- \n\n'
-		output_questions_to_file(@param_string.split(':')[1], @param_string)
   end
 	
 	def output_questions_to_file(question, string)
@@ -33,6 +32,8 @@ class Question
     when /what colour is a banana/ then return_yellow
     when /who is the Prime Minister of Great Britain/ then return_pm
     when /which of the following numbers are prime/ then identify_prime_numbers(question)
+    else
+	output_questions_to_file(@param_string.split(':')[1], @param_string)
     end
   end
 
