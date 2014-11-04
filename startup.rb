@@ -4,6 +4,5 @@ require 'sinatra/reloader'
 set :bind, '0.0.0.0'
 
 get '/*' do
- params
- "/giphy cat"
+ 28
 end
