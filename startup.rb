@@ -4,5 +4,8 @@ require 'sinatra/reloader'
 set :bind, '0.0.0.0'
 
 get '/*' do
- 28
+  q = params['q']
+  id, question = q.split(':')
+  puts id
+  puts question
 end
