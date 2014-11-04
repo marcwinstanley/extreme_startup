@@ -15,11 +15,9 @@ class Question
   end
 	
 	def output_questions_to_file(question)
-		File.open("views/log.txt", "w+") do |file|
-			output = File.open( "views/log.txt", "w" )
-			output << question + "\n"
-			output.close      
-		end
+		open('views/log.txt', 'a') { |f|
+			f.puts question + "\n"
+		}
 	end
 
   def answer
@@ -61,7 +59,7 @@ class Question
 end
 
 
-get '/*' do
+get '/' do
   Question.new(params['q']).answer
 end
 		
